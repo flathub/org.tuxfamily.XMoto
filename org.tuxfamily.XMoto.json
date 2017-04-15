@@ -73,6 +73,7 @@
         {
             "name": "SDL_mixer",
             "config-opts": ["--disable-static"],
+            "rm-configure": true,
             "sources": [
                 {
                     "type": "archive",
