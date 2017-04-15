@@ -1,0 +1,149 @@
+{
+    "app-id": "org.tuxfamily.XMoto",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.6",
+    "sdk": "org.freedesktop.Sdk",
+    "finish-args": [
+        "--device=dri",
+        "--share=ipc",
+        "--share=network",
+        "--socket=x11",
+        "--socket=pulseaudio"
+    ],
+    "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/aclocal",
+        "/share/man",
+        "*.la", "*.a"
+    ],
+    "modules": [
+        {
+            "name": "libxdg-basedir",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.0.tar.gz",
+                    "sha256": "1c2b0032a539033313b5be2e48ddd0ae94c84faf21d93956d53562eef4614868"
+                }
+            ]
+        },
+        {
+            "name": "glu",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.0.tar.bz2",
+                    "sha256": "1f7ad0d379a722fcbd303aa5650c6d7d5544fde83196b42a73d1193568a4df12"
+                }
+            ]
+        },
+        {
+            "name": "SDL",
+            "rm-configure": true,
+            "config-opts": ["--disable-static"],
+            "cleanup": [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.libsdl.org/release/SDL-1.2.15.tar.gz",
+                    "sha256": "d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00"
+                },
+                {
+                    "type": "patch",
+                    "path": "sdl-libx11-build.patch"
+                }
+            ]
+        },
+        {
+            "name": "SDL_mixer",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz",
+                    "sha256": "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
+                }
+            ]
+        },
+        {
+            "name": "SDL_net",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.libsdl.org/projects/SDL_net/release/SDL_net-1.2.8.tar.gz",
+                    "sha256": "5f4a7a8bb884f793c278ac3f3713be41980c5eedccecff0260411347714facb4"
+                }
+            ]
+        },
+        {
+            "name": "SDL_ttf",
+            "config-opts": ["--disable-static"],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.libsdl.org/projects/SDL_ttf/release/SDL_ttf-2.0.11.tar.gz",
+                    "sha256": "724cd895ecf4da319a3ef164892b72078bd92632a5d812111261cde248ebcdb7"
+                }
+            ]
+        },
+        "org.lua.modules.json",
+        {
+            "name": "ode",
+            "config-opts": [
+                "--disable-static",
+                "LIBS=-lX11"
+            ],
+            "cleanup": [
+                "/bin"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://downloads.sourceforge.net/project/opende/ODE/0.11.1/ode-0.11.1.tar.bz2",
+                    "sha256": "877884a86a3d53f3c5f2e35fbd8a3dc23c20249f0636c76f6ef41f6bf57a03a1"
+                }
+            ]
+        },
+        {
+            "name": "xmoto",
+            "rm-configure": true,
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://download.tuxfamily.org/xmoto/xmoto/0.5.11/xmoto-0.5.11-src.tar.gz",
+                    "sha256": "a584a6f9292b184686b72c78f16de4b82d5c5b72ad89e41912ff50d03eca26b2"
+                },
+                {
+                    "type": "patch",
+                    "path": "xmoto-svn3421.patch"
+                },
+                {
+                    "type": "file",
+                    "path": "org.tuxfamily.XMoto.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "org.tuxfamily.XMoto.png"
+                },
+                {
+                    "type": "file",
+                    "path": "org.tuxfamily.XMoto.appdata.xml"
+                }
+            ],
+            "post-install": [
+                "mkdir -p /app/share/applications",
+                "cp org.tuxfamily.XMoto.desktop /app/share/applications",
+                "mkdir -p /app/share/appdata",
+                "cp org.tuxfamily.XMoto.appdata.xml /app/share/appdata",
+                "mkdir -p /app/share/icons/hicolor/48x48/apps",
+                "cp org.tuxfamily.XMoto.png /app/share/icons/hicolor/48x48/apps"
+            ]
+        }
+    ]
+}
