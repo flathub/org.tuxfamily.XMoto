@@ -170,6 +170,7 @@
         "org.lua.modules.json",
         {
             "name": "ode",
+            "rm-configure": true,
             "config-opts": [
                 "--disable-static",
                 "LIBS=-lX11"
