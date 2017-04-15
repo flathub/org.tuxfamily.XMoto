@@ -77,6 +77,7 @@
                 "/bin",
                 "/man"
             ],
+            "rm-configure": true,
             "sources": [
                 {
                     "type": "archive",
@@ -84,8 +85,23 @@
                     "sha256": "1276ea797dd9fde8a12dd3f33f180153922544c28ca9fc7b477c018876be1916"
                 },
                 {
+                    "type": "script",
+                    "path": "autogen.sh",
+                    "commands": [
+                        "AUTOMAKE=\"automake --foreign --add-missing --force-missing\" autoreconf -vfi"
+                    ]
+                },
+                {
+                    "type": "patch",
+                    "path": "smpeg-am-prog-as.patch"
+                },
+                {
                     "type": "patch",
                     "path": "smpeg-export-mpegaudio-class.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "smpeg-no-gtk.patch"
                 },
                 {
                     "type": "patch",
