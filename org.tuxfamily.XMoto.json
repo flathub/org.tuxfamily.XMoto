@@ -18,7 +18,8 @@
         "*.la", "*.a"
     ],
     "modules": [
-        "shared-modules/lua-5.3.2.json",
+        "shared-modules/lua5.3/lua-5.3.2.json",
+        "shared-modules/glu/glu-9.0.0.json",
         {
             "name": "libxdg-basedir",
             "config-opts": ["--disable-static"],
@@ -27,17 +28,6 @@
                     "type": "archive",
                     "url": "https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.0.tar.gz",
                     "sha256": "1c2b0032a539033313b5be2e48ddd0ae94c84faf21d93956d53562eef4614868"
-                }
-            ]
-        },
-        {
-            "name": "glu",
-            "config-opts": ["--disable-static"],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.0.tar.bz2",
-                    "sha256": "1f7ad0d379a722fcbd303aa5650c6d7d5544fde83196b42a73d1193568a4df12"
                 }
             ]
         },
