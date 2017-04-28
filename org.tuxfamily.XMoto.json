@@ -20,6 +20,11 @@
     "modules": [
         "shared-modules/lua5.3/lua-5.3.2.json",
         "shared-modules/glu/glu-9.0.0.json",
+        "shared-modules/SDL/SDL-1.2.15.json",
+        "shared-modules/smpeg/smpeg-0.4.5.json",
+        "shared-modules/SDL/SDL_mixer-1.2.12.json",
+        "shared-modules/SDL/SDL_net-1.2.8.json",
+        "shared-modules/SDL/SDL_ttf-2.0.11.json",
         {
             "name": "libxdg-basedir",
             "config-opts": ["--disable-static"],
@@ -28,133 +33,6 @@
                     "type": "archive",
                     "url": "https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.0.tar.gz",
                     "sha256": "1c2b0032a539033313b5be2e48ddd0ae94c84faf21d93956d53562eef4614868"
-                }
-            ]
-        },
-        {
-            "name": "SDL",
-            "rm-configure": true,
-            "config-opts": ["--disable-static"],
-            "cleanup": [
-                "/bin"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.libsdl.org/release/SDL-1.2.15.tar.gz",
-                    "sha256": "d6d316a793e5e348155f0dd93b979798933fb98aa1edebcc108829d6474aad00"
-                },
-                {
-                    "type": "patch",
-                    "path": "sdl-libx11-build.patch"
-                },
-                {
-                    "type": "script",
-                    "path": "autogen.sh",
-                    "commands": [
-                        "sed -i -e 's/.*AM_PATH_ESD.*//' configure.in",
-                        "cp -p /usr/share/automake-*/config.{sub,guess} build-scripts",
-                        "aclocal",
-                        "libtoolize",
-                        "autoconf"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "smpeg",
-            "config-opts": ["--disable-static"],
-            "cleanup": [
-                "/bin",
-                "/man"
-            ],
-            "rm-configure": true,
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "http://http.debian.net/debian/pool/main/s/smpeg/smpeg_0.4.5+cvs20030824.orig.tar.gz",
-                    "sha256": "1276ea797dd9fde8a12dd3f33f180153922544c28ca9fc7b477c018876be1916"
-                },
-                {
-                    "type": "script",
-                    "path": "autogen.sh",
-                    "commands": [
-                        "AUTOMAKE=\"automake --foreign --add-missing --force-missing\" autoreconf -vfi"
-                    ]
-                },
-                {
-                    "type": "patch",
-                    "path": "smpeg-am-prog-as.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "smpeg-export-mpegaudio-class.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "smpeg-no-gtk.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "smpeg-gcc6.patch"
-                }
-            ]
-        },
-        {
-            "name": "SDL_mixer",
-            "config-opts": ["--disable-static"],
-            "rm-configure": true,
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-1.2.12.tar.gz",
-                    "sha256": "1644308279a975799049e4826af2cfc787cad2abb11aa14562e402521f86992a"
-                },
-                {
-                    "type": "script",
-                    "path": "autogen.sh",
-                    "commands": [
-                        "AUTOMAKE=\"automake --foreign\" autoreconf -vfi",
-                        "cp -p /usr/share/automake-*/config.{sub,guess} build-scripts"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "SDL_net",
-            "config-opts": ["--disable-static"],
-            "rm-configure": true,
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.libsdl.org/projects/SDL_net/release/SDL_net-1.2.8.tar.gz",
-                    "sha256": "5f4a7a8bb884f793c278ac3f3713be41980c5eedccecff0260411347714facb4"
-                },
-                {
-                    "type": "script",
-                    "path": "autogen.sh",
-                    "commands": [
-                        "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "SDL_ttf",
-            "config-opts": ["--disable-static"],
-            "rm-configure": true,
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://www.libsdl.org/projects/SDL_ttf/release/SDL_ttf-2.0.11.tar.gz",
-                    "sha256": "724cd895ecf4da319a3ef164892b72078bd92632a5d812111261cde248ebcdb7"
-                },
-                {
-                    "type": "script",
-                    "path": "autogen.sh",
-                    "commands": [
-                        "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
-                    ]
                 }
             ]
         },
