@@ -41,6 +41,7 @@
             "rm-configure": true,
             "config-opts": [
                 "--disable-static",
+		"--disable-demos",
                 "LIBS=-lX11"
             ],
             "cleanup": [
