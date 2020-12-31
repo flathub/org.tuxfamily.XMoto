@@ -4,14 +4,16 @@
 EmailAddress: neckelmann@gmail.com
 SentUpstream: 2014-09-25
 -->
-<application>
-  <id type="desktop">org.tuxfamily.XMoto.desktop</id>
+<component type="desktop-application">
+  <id>org.tuxfamily.XMoto</id>
+  <launchable type="desktop-id">org.tuxfamily.XMoto.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
+  <name>X-Moto</name>
   <summary>2D motocross platform game</summary>
   <description>
     <p>
-      xmoto is a side-scrolling 2D motocross platform game where the objective
+      X-Moto is a side-scrolling 2D motocross platform game where the objective
       is to collect all the floating items in the level and proceed to the
       checkered finishing ball.
       The motocross bike that the player rides in
@@ -27,10 +29,26 @@ SentUpstream: 2014-09-25
       levels.
     </p>
   </description>
+  <provides>
+    <binary>xmoto</binary>
+  </provides>
   <url type="homepage">http://xmoto.sourceforge.net/</url>
   <screenshots>
     <screenshot type="default">http://wiki.xmoto.tuxfamily.org/images/7/7d/Screenshot0022.png</screenshot>
     <screenshot>http://wiki.xmoto.tuxfamily.org/images/6/65/Xmoto01.png</screenshot>
     <screenshot>http://wiki.xmoto.tuxfamily.org/images/0/04/Screenshot0005.png</screenshot>
   </screenshots>
-</application>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="0.6.1" date="2020-06-20">
+    <description>
+      <ul>
+        <li>Improved level load times.</li>
+        <li>Fixed a game crash with locales using comma (,) as decimal separator.</li>
+        <li>No more crashing on non-existent db entries when migrating from old version.</li>
+      </ul>
+    </description>
+    <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
+    </release>
+  </releases>
+</component>

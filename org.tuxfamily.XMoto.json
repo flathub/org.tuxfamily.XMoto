@@ -1,7 +1,7 @@
 {
     "app-id": "org.tuxfamily.XMoto",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "1.6",
+    "runtime-version": "20.08",
     "sdk": "org.freedesktop.Sdk",
     "finish-args": [
         "--device=all",
@@ -18,8 +18,8 @@
         "*.la", "*.a"
     ],
     "modules": [
-        "shared-modules/lua5.3/lua-5.3.2.json",
-        "shared-modules/glu/glu-9.0.0.json",
+        "shared-modules/lua5.3/lua-5.3.5.json",
+        "shared-modules/glu/glu-9.json",
         "shared-modules/SDL/SDL-1.2.15.json",
         "shared-modules/smpeg/smpeg-0.4.5.json",
         "shared-modules/SDL/SDL_mixer-1.2.12.json",
@@ -27,7 +27,17 @@
         "shared-modules/SDL/SDL_ttf-2.0.11.json",
         {
             "name": "libxdg-basedir",
-            "config-opts": ["--disable-static"],
+            "config-opts": [
+                "--disable-static",
+                "--enable-shared",
+                "--prefix=/app"
+            ],
+            "cleanup": [
+                "/include",
+                "/lib/*.lan",
+                "/lib/pkgconfig",
+                "/share"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -43,29 +53,36 @@
                 "--disable-static",
                 "LIBS=-lX11"
             ],
+            "build-options": {
+                "cxxflags":"-fpermissive"
+            },
             "cleanup": [
                 "/bin"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/opende/ODE/0.11.1/ode-0.11.1.tar.bz2",
-                    "sha256": "877884a86a3d53f3c5f2e35fbd8a3dc23c20249f0636c76f6ef41f6bf57a03a1"
+                    "url": "https://downloads.sourceforge.net/project/opende/ODE/0.13/ode-0.13.tar.bz2",
+                    "sha256": "34ce3e236e313bf109a0cb5546d2fca462aed99f29a42e62bc1463b803c31ef9"
                 }
             ]
         },
         {
             "name": "xmoto",
-            "rm-configure": true,
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts" : [
+                "-DCMAKE_BUILD_TYPE=Release"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "http://download.tuxfamily.org/xmoto/xmoto/0.5.11/xmoto-0.5.11-src.tar.gz",
-                    "sha256": "a584a6f9292b184686b72c78f16de4b82d5c5b72ad89e41912ff50d03eca26b2"
+                    "url": "https://github.com/xmoto/xmoto/archive/0.6.1/0.6.1.tar.gz",
+                    "sha256": "209c8c38b1742d0620d40f90365c7a56f67c86da826c80a76d37fa46ee9c9b66"
                 },
                 {
                     "type": "patch",
-                    "path": "xmoto-svn3421.patch"
+                    "path": "app_fix.patch"
                 },
                 {
                     "type": "file",
@@ -73,7 +90,7 @@
                 },
                 {
                     "type": "file",
-                    "path": "org.tuxfamily.XMoto.png"
+                    "path": "org.tuxfamily.XMoto.svg"
                 },
                 {
                     "type": "file",
@@ -81,12 +98,9 @@
                 }
             ],
             "post-install": [
-                "mkdir -p /app/share/applications",
-                "cp org.tuxfamily.XMoto.desktop /app/share/applications",
-                "mkdir -p /app/share/appdata",
-                "cp org.tuxfamily.XMoto.appdata.xml /app/share/appdata",
-                "mkdir -p /app/share/icons/hicolor/48x48/apps",
-                "cp org.tuxfamily.XMoto.png /app/share/icons/hicolor/48x48/apps"
+                "desktop-file-install --dir=/app/share/applications $FLATPAK_BUILDER_BUILDDIR/org.tuxfamily.XMoto.desktop",
+                "install -Dm644 $FLATPAK_BUILDER_BUILDDIR/org.tuxfamily.XMoto.appdata.xml /app/share/metainfo/org.tuxfamily.XMoto.appdata.xml",
+                "install -Dm644 $FLATPAK_BUILDER_BUILDDIR/org.tuxfamily.XMoto.svg /app/share/icons/hicolor/scalable/apps/org.tuxfamily.XMoto.svg"
             ]
         }
     ]
