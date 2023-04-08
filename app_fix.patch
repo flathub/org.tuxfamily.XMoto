@@ -1,5 +1,5 @@
---- xmoto-0.6.1/src/common/VFileIO.cpp	2020-12-24 15:38:49.286118355 -0400
-+++ xmoto-0.6.1/src/common/VFileIO.cpp	2020-12-24 18:14:08.572174657 -0400
+--- xmoto-0.6.2/src/common/VFileIO.cpp	2020-12-24 15:38:49.286118355 -0400
++++ xmoto-0.6.2/src/common/VFileIO.cpp	2020-12-24 18:14:08.572174657 -0400
 @@ -1313,7 +1313,7 @@
    for (char const *const *c_dir = xdgDataDirectories(m_xdgHd); *c_dir != NULL;
         c_dir++) {

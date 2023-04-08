@@ -21,8 +21,8 @@ SentUpstream: 2014-09-25
       solid object the level has to be restarted.
     </p>
     <p>
-      There are hundreds of levels available in xmoto, both included in the
-      initial install, and downloadable from the internet.
+      There are hundreds of levels available in X-Moto, both included in the
+      initial install, and downloadable from the Internet.
       There is also the
       ability to challenge fastest times with other players from around the world.
       and saved ghost data to visually see the runs of other players through the
@@ -40,15 +40,42 @@ SentUpstream: 2014-09-25
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.6.2" date="2023-03-05">
+      <description>
+        <ul>
+          <li>X-Moto now uses SDL2 for window handling, input, etc.</li>
+          <li>Added Shortcut to view level info</li>
+          <li>Added Shortcut for connecting / disconnecting from the server</li>
+          <li>Added Button for clearing level cache</li>
+          <li>Added File drag &amp; drop support</li>
+          <li>Added File associations</li>
+          <li>Added Support for high refresh rate screens</li>
+          <li>Improved controller support in menus</li>
+          <li>Default theme changed to 'Classic'</li>
+          <li>Safemode now prevents you from restarting in the death screen if a checkpoint has been reached</li>
+          <li>In 'beating mode', if you have not reached a checkpoint, the 'return to checkpoint' key takes you to the start of the level</li>
+          <li>Log files are now kept for longer</li>
+          <li>Improved UI text boxes (with pasting support and word jumping etc)</li>
+          <li>Admin console is now scrollable</li>
+          <li>Added Hide sprites in ugly mode and minimap option</li>
+          <li>Added Max frame rate option</li>
+          <li>Added Native/software cursor option</li>
+          <li>Updated Russian, Swedish and Danish translations</li>
+          <li>Fixed the window not being properly focused when alt-tabbing</li>
+          <li>Fixed various memory leaks and crashes</li>
+        </ul>
+      </description>
+      <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
+    </release>
     <release version="0.6.1" date="2020-06-20">
-    <description>
-      <ul>
-        <li>Improved level load times.</li>
-        <li>Fixed a game crash with locales using comma (,) as decimal separator.</li>
-        <li>No more crashing on non-existent db entries when migrating from old version.</li>
-      </ul>
-    </description>
-    <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
+      <description>
+        <ul>
+          <li>Improved level load times.</li>
+          <li>Fixed a game crash with locales using comma (,) as decimal separator.</li>
+          <li>No more crashing on non-existent db entries when migrating from old version.</li>
+        </ul>
+      </description>
+      <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
     </release>
   </releases>
 </component>
