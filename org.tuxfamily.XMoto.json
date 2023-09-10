@@ -1,8 +1,9 @@
 {
     "app-id": "org.tuxfamily.XMoto",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "22.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
+    "command": "xmoto",
     "finish-args": [
         "--device=all",
         "--share=ipc",
@@ -30,8 +31,7 @@
             "name": "libxdg-basedir",
             "config-opts": [
                 "--disable-static",
-                "--enable-shared",
-                "--prefix=/app"
+                "--enable-shared"
             ],
             "cleanup": [
                 "/include",
