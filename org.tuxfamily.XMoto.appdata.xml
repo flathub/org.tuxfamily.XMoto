@@ -42,6 +42,7 @@ SentUpstream: 2014-09-25
   <releases>
     <release version="0.6.2" date="2023-03-05">
       <description>
+        <p>Changes</p>
         <ul>
           <li>X-Moto now uses SDL2 for window handling, input, etc.</li>
           <li>Added Shortcut to view level info</li>
@@ -69,6 +70,7 @@ SentUpstream: 2014-09-25
     </release>
     <release version="0.6.1" date="2020-06-20">
       <description>
+        <p>Changes</p>
         <ul>
           <li>Improved level load times.</li>
           <li>Fixed a game crash with locales using comma (,) as decimal separator.</li>
