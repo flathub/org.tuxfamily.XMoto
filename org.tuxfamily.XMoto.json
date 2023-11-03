@@ -1,8 +1,9 @@
 {
     "app-id": "org.tuxfamily.XMoto",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "20.08",
+    "runtime-version": "23.08",
     "sdk": "org.freedesktop.Sdk",
+    "command": "xmoto",
     "finish-args": [
         "--device=all",
         "--share=ipc",
@@ -15,7 +16,8 @@
         "/lib/pkgconfig",
         "/share/aclocal",
         "/share/man",
-        "*.la", "*.a"
+        "*.la",
+        "*.a"
     ],
     "modules": [
         "shared-modules/lua5.3/lua-5.3.5.json",
@@ -29,8 +31,7 @@
             "name": "libxdg-basedir",
             "config-opts": [
                 "--disable-static",
-                "--enable-shared",
-                "--prefix=/app"
+                "--enable-shared"
             ],
             "cleanup": [
                 "/include",
@@ -54,7 +55,7 @@
                 "LIBS=-lX11"
             ],
             "build-options": {
-                "cxxflags":"-fpermissive"
+                "cxxflags": "-fpermissive"
             },
             "cleanup": [
                 "/bin"
@@ -71,14 +72,14 @@
             "name": "xmoto",
             "buildsystem": "cmake-ninja",
             "builddir": true,
-            "config-opts" : [
+            "config-opts": [
                 "-DCMAKE_BUILD_TYPE=Release"
             ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/xmoto/xmoto/archive/0.6.1/0.6.1.tar.gz",
-                    "sha256": "209c8c38b1742d0620d40f90365c7a56f67c86da826c80a76d37fa46ee9c9b66"
+                    "url": "https://github.com/xmoto/xmoto/archive/refs/tags/v0.6.2.tar.gz",
+                    "sha256": "1ba54baaa1511f45497c1aadd6c8fda4917fd4e403466cdc92b5755b05c90de4"
                 },
                 {
                     "type": "patch",
