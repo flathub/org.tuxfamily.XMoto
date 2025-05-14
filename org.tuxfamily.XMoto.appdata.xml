@@ -9,6 +9,9 @@ SentUpstream: 2014-09-25
   <launchable type="desktop-id">org.tuxfamily.XMoto.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>GPL-2.0+</project_license>
+  <developer id="org.tuxfamily">
+      <name>X-Moto Contributors</name>
+  </developer>
   <name>X-Moto</name>
   <summary>2D motocross platform game</summary>
   <description>
@@ -34,9 +37,9 @@ SentUpstream: 2014-09-25
   </provides>
   <url type="homepage">http://xmoto.sourceforge.net/</url>
   <screenshots>
-    <screenshot type="default">http://wiki.xmoto.tuxfamily.org/images/7/7d/Screenshot0022.png</screenshot>
-    <screenshot>http://wiki.xmoto.tuxfamily.org/images/6/65/Xmoto01.png</screenshot>
-    <screenshot>http://wiki.xmoto.tuxfamily.org/images/0/04/Screenshot0005.png</screenshot>
+      <screenshot type="default"><image>http://wiki.xmoto.tuxfamily.org/images/7/7d/Screenshot0022.png</image></screenshot>
+      <screenshot><image>http://wiki.xmoto.tuxfamily.org/images/6/65/Xmoto01.png</image></screenshot>
+      <screenshot><image>http://wiki.xmoto.tuxfamily.org/images/0/04/Screenshot0005.png</image></screenshot>
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
