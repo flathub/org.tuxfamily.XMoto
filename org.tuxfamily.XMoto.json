@@ -78,8 +78,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/xmoto/xmoto/archive/refs/tags/v0.6.2.tar.gz",
-                    "sha256": "1ba54baaa1511f45497c1aadd6c8fda4917fd4e403466cdc92b5755b05c90de4"
+                    "url": "https://github.com/xmoto/xmoto/archive/refs/tags/v0.6.3.tar.gz",
+                    "sha256": "64cb29934660456ec82cebdaa0d3d273a862e10760e8ee80443928d317242484"
                 },
                 {
                     "type": "patch",

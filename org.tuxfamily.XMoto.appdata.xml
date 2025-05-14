@@ -40,6 +40,25 @@ SentUpstream: 2014-09-25
   </screenshots>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="0.6.3" date="2025-03-31">
+      <description>
+        <p>Changes</p>
+        <ul>
+            <li>Website and game server migrated from Tuxfamily to xmoto.org</li>
+            <li>Updated Russian translation</li>
+            <li>Updated French translation</li>
+            <li>Updated Galician translation</li>
+            <li>Added support for building on macOS arm64</li>
+            <li>Fullscreen mode now uses borderless fullscreen instead of exclusive fullscreen</li>
+            <li>Fixed broken AppImage support</li>
+            <li>Fixed 'Hide sprites in ugly mode' hiding all sprites</li>
+            <li>Fixed broken script action key assignment</li>
+            <li>User-defined keys can now be reset to default in the options</li>
+            <li>Other minor bug fixes</li>
+        </ul>
+      </description>
+      <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
+    </release>
     <release version="0.6.2" date="2023-03-05">
       <description>
         <p>Changes</p>
