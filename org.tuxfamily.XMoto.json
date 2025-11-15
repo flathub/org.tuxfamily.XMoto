@@ -43,27 +43,6 @@
             ]
         },
         {
-            "name": "ode",
-            "rm-configure": true,
-            "config-opts": [
-                "--disable-static",
-                "LIBS=-lX11"
-            ],
-            "build-options": {
-                "cxxflags": "-fpermissive"
-            },
-            "cleanup": [
-                "/bin"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/opende/ODE/0.13/ode-0.13.tar.bz2",
-                    "sha256": "34ce3e236e313bf109a0cb5546d2fca462aed99f29a42e62bc1463b803c31ef9"
-                }
-            ]
-        },
-        {
             "name": "xmoto",
             "buildsystem": "cmake-ninja",
             "builddir": true,
