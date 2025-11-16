@@ -22,10 +22,6 @@
     "modules": [
         "shared-modules/lua5.3/lua-5.3.5.json",
         "shared-modules/glu/glu-9.json",
-        "shared-modules/SDL/SDL-1.2.15.json",
-        "shared-modules/SDL/SDL_mixer-1.2.12.json",
-        "shared-modules/SDL/SDL_net-1.2.8.json",
-        "shared-modules/SDL/SDL_ttf-2.0.11.json",
         {
             "name": "libxdg-basedir",
             "config-opts": [
@@ -43,27 +39,6 @@
                     "type": "archive",
                     "url": "https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.0.tar.gz",
                     "sha256": "1c2b0032a539033313b5be2e48ddd0ae94c84faf21d93956d53562eef4614868"
-                }
-            ]
-        },
-        {
-            "name": "ode",
-            "rm-configure": true,
-            "config-opts": [
-                "--disable-static",
-                "LIBS=-lX11"
-            ],
-            "build-options": {
-                "cxxflags": "-fpermissive"
-            },
-            "cleanup": [
-                "/bin"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://downloads.sourceforge.net/project/opende/ODE/0.13/ode-0.13.tar.bz2",
-                    "sha256": "34ce3e236e313bf109a0cb5546d2fca462aed99f29a42e62bc1463b803c31ef9"
                 }
             ]
         },

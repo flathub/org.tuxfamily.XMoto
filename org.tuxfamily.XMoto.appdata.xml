@@ -35,12 +35,25 @@ SentUpstream: 2014-09-25
   <provides>
     <binary>xmoto</binary>
   </provides>
-  <url type="homepage">http://xmoto.sourceforge.net/</url>
+  <url type="homepage">https://xmoto.org/</url>
   <screenshots>
-      <screenshot type="default"><image>http://wiki.xmoto.tuxfamily.org/images/7/7d/Screenshot0022.png</image></screenshot>
-      <screenshot><image>http://wiki.xmoto.tuxfamily.org/images/6/65/Xmoto01.png</image></screenshot>
-      <screenshot><image>http://wiki.xmoto.tuxfamily.org/images/0/04/Screenshot0005.png</image></screenshot>
+      <screenshot type="default">
+        <caption>Mind the gap</caption>
+        <image>https://wiki.xmoto.tuxfamily.org/images/7/7d/Screenshot0022.png</image>
+      </screenshot>
+      <screenshot>
+        <caption>Wheelie in the moonlight</caption>
+        <image>https://wiki.xmoto.tuxfamily.org/images/6/65/Xmoto01.png</image>
+      </screenshot>
+      <screenshot>
+        <caption>In a loop</caption>
+        <image>https://wiki.xmoto.tuxfamily.org/images/0/04/Screenshot0005.png</image>
+      </screenshot>
   </screenshots>
+  <branding>
+    <color type="primary" scheme_preference="light">#4081c5</color>
+    <color type="primary" scheme_preference="dark">#5c4523</color>
+  </branding>
   <content_rating type="oars-1.1"/>
   <releases>
     <release version="0.6.3" date="2025-03-31">
@@ -60,7 +73,7 @@ SentUpstream: 2014-09-25
             <li>Other minor bug fixes</li>
         </ul>
       </description>
-      <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
+      <url>https://xmoto.org/dev/ChangeLog</url>
     </release>
     <release version="0.6.2" date="2023-03-05">
       <description>
@@ -88,18 +101,7 @@ SentUpstream: 2014-09-25
           <li>Fixed various memory leaks and crashes</li>
         </ul>
       </description>
-      <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
-    </release>
-    <release version="0.6.1" date="2020-06-20">
-      <description>
-        <p>Changes</p>
-        <ul>
-          <li>Improved level load times.</li>
-          <li>Fixed a game crash with locales using comma (,) as decimal separator.</li>
-          <li>No more crashing on non-existent db entries when migrating from old version.</li>
-        </ul>
-      </description>
-      <url>https://xmoto.tuxfamily.org/dev/ChangeLog</url>
+      <url>https://xmoto.org/dev/ChangeLog</url>
     </release>
   </releases>
 </component>
