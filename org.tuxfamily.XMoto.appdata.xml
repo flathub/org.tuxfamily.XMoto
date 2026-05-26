@@ -35,7 +35,9 @@ SentUpstream: 2014-09-25
   <provides>
     <binary>xmoto</binary>
   </provides>
-  <url type="homepage">https://xmoto.org/</url>
+  <url type="homepage">https://xmoto.org</url>
+  <url type="bugtracker">https://github.com/xmoto/xmoto/issues</url>
+  <url type="vcs-browser">https://github.com/xmoto/xmoto</url>
   <screenshots>
       <screenshot type="default">
         <caption>Mind the gap</caption>
