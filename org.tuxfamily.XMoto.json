@@ -1,7 +1,7 @@
 {
     "app-id": "org.tuxfamily.XMoto",
     "runtime": "org.freedesktop.Platform",
-    "runtime-version": "25.08",
+    "runtime-version": "26.08",
     "sdk": "org.freedesktop.Sdk",
     "command": "xmoto",
     "finish-args": [
@@ -13,6 +13,7 @@
     ],
     "cleanup": [
         "/include",
+        "/lib/cmake",
         "/lib/pkgconfig",
         "/share/man",
         "/share/pixmaps",
@@ -25,6 +26,20 @@
         "shared-modules/glu/glu-9.json",
         "shared-modules/SDL2/SDL2_image.json",
         "shared-modules/SDL2/SDL2_ttf.json",
+        "shared-modules/SDL2/SDL2_mixer.json",
+        {
+            "name": "SDL2_net",
+            "config-opts": [
+                "--disable-static"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://www.libsdl.org/projects/SDL_net/release/SDL2_net-2.4.0.tar.gz",
+                    "sha256": "9cbca2527feb3f1a622d48ba65cc7dee9b1e3f2c55ceafb7d7720bb058aafb30"
+                }
+            ]
+        },
         {
             "name": "libxdg-basedir",
             "config-opts": [
